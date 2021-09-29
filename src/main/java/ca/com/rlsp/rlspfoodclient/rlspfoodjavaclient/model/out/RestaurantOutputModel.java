@@ -1,11 +1,11 @@
-package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model;
+package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.out;
 
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
-public class RestaurantShortModel {
+public class RestaurantOutputModel {
 
     private Long id;
 
@@ -13,9 +13,9 @@ public class RestaurantShortModel {
 
     private BigDecimal deliveryFee;
 
-    private CuisineShortModel  cuisine;
+    private CuisineOutputModel cuisine;
 
-    private AddressShortModel address;
+    private AddressOutputModel address;
 
     private Boolean active;
 

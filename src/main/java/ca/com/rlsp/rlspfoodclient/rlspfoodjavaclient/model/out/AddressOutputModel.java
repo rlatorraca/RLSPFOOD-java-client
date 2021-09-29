@@ -1,9 +1,9 @@
-package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model;
+package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.out;
 
 import lombok.Data;
 
 @Data
-public class CityShortModel {
+public class AddressOutputModel {
 
     private String postalcode;
 
@@ -15,5 +15,5 @@ public class CityShortModel {
 
     private String district;
 
-    private CityShortModel city;
+    private CityOutputModel city;
 }

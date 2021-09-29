@@ -1,6 +1,6 @@
 package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.api;
 
-import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.RestaurantShortModel;
+import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.out.RestaurantOutputModel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.web.client.RestClientResponseException;
@@ -20,14 +20,14 @@ public class RestaurantClient {
     // Classe do SpringBoot que ajuda fazer chamadas HTTP
     private RestTemplate restTemplate;
 
-    public List<RestaurantShortModel> listAll(){
+    public List<RestaurantOutputModel> listAll(){
 
         try{
             URI uriResource = URI.create(url + RESOURCE_PATH);
 
             // Faz o GET e retorna o objeto ja DESSERIALIZDO ( no tipo de retorno escolhido)
-            RestaurantShortModel[] restaurants = restTemplate
-                    .getForObject(uriResource, RestaurantShortModel[].class);
+            RestaurantOutputModel[] restaurants = restTemplate
+                    .getForObject(uriResource, RestaurantOutputModel[].class);
 
             return Arrays.asList(restaurants);
 

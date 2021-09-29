@@ -1,6 +1,6 @@
 package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.api;
 
-import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.ErrorModel;
+import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.out.error.ErrorModel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
