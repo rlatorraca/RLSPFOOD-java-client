@@ -15,7 +15,7 @@ public class ErrorModel {
     private List<WrongObject> errorObjects = new ArrayList<>();
 
     @Data
-    static class WrongObject {
+    public static class WrongObject {
         private String name;
         private String userMessage;
     }

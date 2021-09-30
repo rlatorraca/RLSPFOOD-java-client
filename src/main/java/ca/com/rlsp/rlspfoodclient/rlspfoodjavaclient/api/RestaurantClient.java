@@ -1,5 +1,6 @@
 package ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.api;
 
+import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.input.RestaurantinputModel;
 import ca.com.rlsp.rlspfoodclient.rlspfoodjavaclient.model.out.RestaurantOutputModel;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 public class RestaurantClient {
 
-    public static final String RESOURCE_PATH = "/restaurantss";
+
+    public static final String RESOURCE_PATH = "/restaurants";
     private String url;
 
     // Classe do SpringBoot que ajuda fazer chamadas HTTP
@@ -30,6 +32,19 @@ public class RestaurantClient {
                     .getForObject(uriResource, RestaurantOutputModel[].class);
 
             return Arrays.asList(restaurants);
+
+        } catch (RestClientResponseException e) {
+            throw new ClientJavaApiException(e.getMessage(), e);
+        }
+    }
+
+    public RestaurantOutputModel postRestaurant(RestaurantinputModel restaurantinputModel) {
+
+        URI uriResource = URI.create(url + RESOURCE_PATH);
+        try{
+            // Faz o POST e retorna o objeto ja DESSERIALIZDO ( no tipo de retorno escolhido)
+            return restTemplate
+                    .postForObject(uriResource, restaurantinputModel, RestaurantOutputModel.class);
 
         } catch (RestClientResponseException e) {
             throw new ClientJavaApiException(e.getMessage(), e);

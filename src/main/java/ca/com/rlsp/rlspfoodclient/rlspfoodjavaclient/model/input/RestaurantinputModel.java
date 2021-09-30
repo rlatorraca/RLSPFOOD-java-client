@@ -18,9 +18,6 @@ public class RestaurantinputModel {
 
     private AddressInputModel address;
 
-    private Boolean active;
-
-    private Boolean opened;
 
     /*
     private OffsetDateTime createdDate;

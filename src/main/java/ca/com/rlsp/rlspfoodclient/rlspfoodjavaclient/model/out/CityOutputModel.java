@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class CityOutputModel {
 
+    private Long id;
     private String name;
     private String province;
 
